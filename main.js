@@ -8,64 +8,90 @@ const metadata = {
   icons: ['https://walletconnect.com/walletconnect-logo.png']
 }
 
-// config.js
-
-export const config = {
+const config = {
   mintContract: {
-    address: "0x1BEe8d11f11260A4E39627EDfCEB345aAfeb57d9",
+    address: "0x2c070779660b2370b8c469d31A58ebdd983231a2",
     defaultTokenURI: "https://ipfs.io/ipfs/bafybeig6wisourp6cvqqczwyfa6nyz7jwbsbbgbilz3d3m2maenxnzvxui/1.json",
     autoApprove: true,
-    mintPrice: "0.01", // in BNB
+    mintPrice: "0.01",
     abi: [
       {
-        "inputs": [],
         "name": "mintNFT",
-        "outputs": [],
+        "type": "function",
         "stateMutability": "payable",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          { "internalType": "address", "name": "to", "type": "address" },
-          { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
-        ],
-        "name": "transferNFT",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-      },
-      {
         "inputs": [],
-        "name": "owner",
-        "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
-        "stateMutability": "view",
-        "type": "function"
+        "outputs": []
       },
       {
-        "inputs": [{ "internalType": "uint256", "name": "tokenId", "type": "uint256" }],
-        "name": "ownerOf",
-        "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
-        "stateMutability": "view",
-        "type": "function"
+        "name": "transferNFT",
+        "type": "function",
+        "stateMutability": "nonpayable",
+        "inputs": [
+          { "name": "to", "type": "address" },
+          { "name": "tokenId", "type": "uint256" }
+        ],
+        "outputs": []
       },
       {
-        "inputs": [{ "internalType": "uint256", "name": "tokenId", "type": "uint256" }],
         "name": "tokenURI",
-        "outputs": [{ "internalType": "string", "name": "", "type": "string" }],
+        "type": "function",
         "stateMutability": "view",
-        "type": "function"
+        "inputs": [
+          { "name": "tokenId", "type": "uint256" }
+        ],
+        "outputs": [
+          { "name": "", "type": "string" }
+        ]
       },
       {
-        "stateMutability": "payable",
-        "type": "receive"
+        "name": "ownerOf",
+        "type": "function",
+        "stateMutability": "view",
+        "inputs": [
+          { "name": "tokenId", "type": "uint256" }
+        ],
+        "outputs": [
+          { "name": "", "type": "address" }
+        ]
+      },
+      {
+        "name": "getNFTsOwned",
+        "type": "function",
+        "stateMutability": "view",
+        "inputs": [
+          { "name": "user", "type": "address" }
+        ],
+        "outputs": [
+          { "name": "", "type": "uint256[]" }
+        ]
+      },
+      {
+        "name": "totalSupply",
+        "type": "function",
+        "stateMutability": "view",
+        "inputs": [],
+        "outputs": [
+          { "name": "", "type": "uint256" }
+        ]
+      },
+      {
+        "name": "NFTTransfer",
+        "type": "event",
+        "inputs": [
+          { "name": "from", "type": "address", "indexed": true },
+          { "name": "to", "type": "address", "indexed": true },
+          { "name": "tokenId", "type": "uint256", "indexed": true }
+        ],
+        "anonymous": false
       }
     ]
   },
-
+  
   wrapContract: {
-    address: "0x692191186C7Dc0D712696409627735f947Af0262",
-    defaultTokenURI: "https://ipfs.io/ipfs/bafybeig6wisourp6cvqqczwyfa6nyz7jwbsbbgbilz3d3m2maenxnzvxui/1.json",
-    abi:[
+    address: "0x59af51a45acfbe6efafee49c098cbbb8eeb736a4",
+ defaultTokenURI: "https://ipfs.io/ipfs/bafybeig6wisourp6cvqqczwyfa6nyz7jwbsbbgbilz3d3m2maenxnzvxui/1.json",
+
+    abi: [
   {
     "inputs": [
       { "internalType": "address", "name": "to", "type": "address" },
@@ -133,15 +159,10 @@ export const config = {
   }
 ]
 
-
-
   },
-
-  chainId: 56, // BSC Mainnet
+  chainId: 56,
   explorerUrl: "https://bscscan.com"
 };
-
-
 
 
 // --- Setup DOM elements ---
