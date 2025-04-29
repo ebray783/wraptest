@@ -12,7 +12,7 @@ const metadata = {
 
 export const config = {
   mintContract: {
-    address: "0x2c070779660b2370b8c469d31A58ebdd983231a2",
+    address: "0x1BEe8d11f11260A4E39627EDfCEB345aAfeb57d9",
     defaultTokenURI: "https://ipfs.io/ipfs/bafybeig6wisourp6cvqqczwyfa6nyz7jwbsbbgbilz3d3m2maenxnzvxui/1.json",
     autoApprove: true,
     mintPrice: "0.01", // in BNB
@@ -63,7 +63,7 @@ export const config = {
   },
 
   wrapContract: {
-    address: "0x59af51a45acfbe6efafee49c098cbbb8eeb736a4",
+    address: "0x692191186C7Dc0D712696409627735f947Af0262",
     defaultTokenURI: "https://ipfs.io/ipfs/bafybeig6wisourp6cvqqczwyfa6nyz7jwbsbbgbilz3d3m2maenxnzvxui/1.json",
     abi: [
       {
