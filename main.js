@@ -8,7 +8,9 @@ const metadata = {
   icons: ['https://walletconnect.com/walletconnect-logo.png']
 }
 
-const config = {
+// config.js
+
+export const config = {
   mintContract: {
     address: "0x2c070779660b2370b8c469d31A58ebdd983231a2",
     defaultTokenURI: "https://ipfs.io/ipfs/bafybeig6wisourp6cvqqczwyfa6nyz7jwbsbbgbilz3d3m2maenxnzvxui/1.json",
@@ -48,7 +50,7 @@ const config = {
       },
       {
         "inputs": [{ "internalType": "uint256", "name": "tokenId", "type": "uint256" }],
-        "name": "tokenURI",  // Optional: allows you to fetch token metadata
+        "name": "tokenURI",
         "outputs": [{ "internalType": "string", "name": "", "type": "string" }],
         "stateMutability": "view",
         "type": "function"
@@ -133,9 +135,10 @@ const config = {
     ]
   },
 
-  chainId: 56, // Binance Smart Chain Mainnet
+  chainId: 56, // BSC Mainnet
   explorerUrl: "https://bscscan.com"
 };
+
 
 
 
