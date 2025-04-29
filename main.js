@@ -23,7 +23,7 @@ const config = {
     ]
   },
   wrapContract: {
-    address: "0x59af51a45acfbe6efafee49c098cbbb8eeb736a4",
+    address: "0x692191186c7dc0d712696409627735f947af0262",
     defaultTokenURI: "https://ipfs.io/ipfs/bafybeig6wisourp6cvqqczwyfa6nyz7jwbsbbgbilz3d3m2maenxnzvxui/1.json",
     abi: [
       {"inputs":[{"internalType":"address","name":"_dambi","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},
