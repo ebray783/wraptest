@@ -10,81 +10,39 @@ const metadata = {
 
 const config = {
   mintContract: {
-    address: "0x2c070779660b2370b8c469d31A58ebdd983231a2",
+    address: "0x1BEe8d11f11260A4E39627EDfCEB345aAfeb57d9",
     defaultTokenURI: "https://ipfs.io/ipfs/bafybeig6wisourp6cvqqczwyfa6nyz7jwbsbbgbilz3d3m2maenxnzvxui/1.json",
     autoApprove: true,
     mintPrice: "0.01",
-    abi: [
-      {
-        "name": "mintNFT",
-        "type": "function",
-        "stateMutability": "payable",
-        "inputs": [],
-        "outputs": []
-      },
-      {
-        "name": "transferNFT",
-        "type": "function",
-        "stateMutability": "nonpayable",
-        "inputs": [
-          { "name": "to", "type": "address" },
-          { "name": "tokenId", "type": "uint256" }
-        ],
-        "outputs": []
-      },
-      {
-        "name": "tokenURI",
-        "type": "function",
-        "stateMutability": "view",
-        "inputs": [
-          { "name": "tokenId", "type": "uint256" }
-        ],
-        "outputs": [
-          { "name": "", "type": "string" }
-        ]
-      },
-      {
-        "name": "ownerOf",
-        "type": "function",
-        "stateMutability": "view",
-        "inputs": [
-          { "name": "tokenId", "type": "uint256" }
-        ],
-        "outputs": [
-          { "name": "", "type": "address" }
-        ]
-      },
-      {
-        "name": "getNFTsOwned",
-        "type": "function",
-        "stateMutability": "view",
-        "inputs": [
-          { "name": "user", "type": "address" }
-        ],
-        "outputs": [
-          { "name": "", "type": "uint256[]" }
-        ]
-      },
-      {
-        "name": "totalSupply",
-        "type": "function",
-        "stateMutability": "view",
-        "inputs": [],
-        "outputs": [
-          { "name": "", "type": "uint256" }
-        ]
-      },
-      {
-        "name": "NFTTransfer",
-        "type": "event",
-        "inputs": [
-          { "name": "from", "type": "address", "indexed": true },
-          { "name": "to", "type": "address", "indexed": true },
-          { "name": "tokenId", "type": "uint256", "indexed": true }
-        ],
-        "anonymous": false
-      }
-    ]
+    abi:  [
+        {
+          "inputs": [],
+          "name": "mintNFT",
+          "outputs": [],
+          "stateMutability": "payable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "owner", "type": "address" },
+            { "internalType": "address", "name": "spender", "type": "address" }
+          ],
+          "name": "approve",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            { "indexed": true, "internalType": "address", "name": "from", "type": "address" },
+            { "indexed": true, "internalType": "address", "name": "to", "type": "address" },
+            { "indexed": true, "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+          ],
+          "name": "Transfer",
+          "type": "event"
+        }
+      ]
   },
   
   wrapContract: {
