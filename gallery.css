@@ -120,7 +120,7 @@ header {
   
   /* GALLERY SHIFT CONTROL - CHANGE THIS NUMBER */
   .gallery {
-    --shift: -10px; /* ← Change this value (- for left, + for right) */
+    --shift: 0px; /* ← Change this value (- for left, + for right) */
    
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
