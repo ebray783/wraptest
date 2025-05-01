@@ -118,23 +118,49 @@ header {
     display: none;
   }
   
-  /* GALLERY SHIFT CONTROL - CHANGE THIS NUMBER */
+/* RESPONSIVE (MOBILE) */
+@media (max-width: 768px) {
+  body {
+    font-size: 10px;
+    line-height: 1.4;
+    padding: 10px 0 30px;
+  }
+
+  /* Main wrapper */
+  .main-wrapper {
+    flex-direction: column;
+    align-items: center; /* Center align all items */
+    justify-content: center; /* Ensure the wrapper is centered vertically if needed */
+    gap: 25px;
+    padding: 0;
+    width: 100%;
+  }
+
+  /* Side column */
+  .side-column {
+    display: none;
+  }
+
+  /* GALLERY SHIFT CONTROL */
   .gallery {
-    --shift: -25px; /* ← Change this value (- for left, + for right) */
-   
+    --shift: -20px; /* Change this value (- for left, + for right) */
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
-    padding: 0 calc(0px - var(--shift)) 15 px;
+    padding: 0 10px 15px; /* Adjust padding */
     transform: translateX(var(--shift));
-    margin-right: calc(-1 * var(--shift))
-    width: calc(100% + var(--shift));
+    margin-right: 0; /* Remove any margin that offsets the gallery */
+    width: 100%; /* Ensure the gallery width is 100% of the container */
+    max-width: 100%;
+    margin-left: auto; /* Center the gallery */
+    margin-right: auto; /* Center the gallery */
   }
-  
+
   .gallery-item {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 0 8px rgba(0, 255, 255, 0.2);
   }
+
   .gallery-item img {
     max-width: 100%;
     width: 100%;
@@ -143,8 +169,10 @@ header {
     border-radius: 8px;
     margin-bottom: 8px;
   }
+
   header {
     font-size: 1.5em;
     padding: 20px 10px;
+    text-align: center;
   }
 }
