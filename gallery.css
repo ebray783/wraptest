@@ -42,6 +42,7 @@ header {
   margin-top: 40px;
   padding: 0 20px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 /* SIDE IMAGES */
@@ -69,8 +70,7 @@ header {
   width: 100%;
   max-width: 1000px;
   padding: 0 10px;
-  box-sizing: border-box;
-   margin: 0 auto; /* ✅ This centers the gallery */
+  margin: 0 auto;
 }
 .gallery-item {
   background: radial-gradient(circle at center, #0f0c29, #302b63, #24243e);
@@ -80,7 +80,6 @@ header {
   text-align: center;
   transition: transform 0.3s ease;
   width: 100%;
-  box-sizing: border-box;
 }
 .gallery-item img {
   width: 100%;
@@ -102,8 +101,6 @@ header {
   font-size: 0.9em;
 }
 
-
-
 /* RESPONSIVE (MOBILE) */
 @media (max-width: 768px) {
   body {
@@ -113,22 +110,26 @@ header {
   }
   .main-wrapper {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     gap: 25px;
-    padding: 0 10px;
+    padding: 0;
   }
   .side-column {
     display: none;
   }
+  
+  /* GALLERY SHIFT CONTROL - CHANGE THIS NUMBER */
   .gallery {
-    /* Shows 2 columns on mobile, each min 120px wide */
+    --shift: -20px; /* ← Change this value (- for left, + for right) */
+   
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
-    padding: 0 10px;
-    width: 100%;
-    max-width: 100vw;
-    transform: translateX(-20px); /* Shift the gallery to the left */
+    padding: 0 calc(0px - var(--shift)) 15 px;
+    transform: translateX(var(--shift));
+    margin-right: calc(-1 * var(--shift))
+    width: calc(100% + var(--shift));
   }
+  
   .gallery-item {
     padding: 10px;
     border-radius: 10px;
@@ -141,9 +142,6 @@ header {
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 8px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
   }
   header {
     font-size: 1.5em;
